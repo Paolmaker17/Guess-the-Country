@@ -479,7 +479,7 @@ function setParameters(countries, numberOfCountries) {
                     }
 
             }else{
-                saveAnswers3(indexs,indexs,sbagliate,document.querySelectorAll("#hints-answer")[1].value);
+                saveAnswers3(numberOfCountries,indexs,sbagliate,document.querySelectorAll("#hints-answer")[1].value);
             }
         }
     });
