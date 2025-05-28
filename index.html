@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="CSS.css">
+    <script src="JS.js"></script>
+
+    <title>Gioco delle nazioni</title>
+</head>
+<body>
+    <script>
+        // if (localStorage.getItem("username")) {
+        //     window.location.href = "game.html";
+        // }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                errorControl();
+            }
+        });
+    </script>
+    
+    <div style="display: flex;flex-wrap: wrap;justify-content: center;align-items: center;height: 100vh;">
+        <div id="name-container">
+            <form id="name-form">
+                <label for="username" id="custom-label">Nome giocatore</label>
+                <input type="text" id="username" placeholder="Inserisci il tuo nickname" oninput="onInput(event)" spellcheck="false" required>
+                
+                <button type="button" id="start-button" onclick="errorControl()">INIZIA A GIOCARE</button>
+            </form> 
+        </div>
+    </div>
+    
+</body>
+</html>

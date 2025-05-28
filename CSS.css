@@ -1,0 +1,360 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: aliceblue;
+}
+
+/* Pagina iniziale */
+#name-container {
+    height: 200px;
+    width: 400px;
+    vertical-align: middle; 
+
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19);
+}
+#name-form{
+    padding: 25px;
+    
+    font-family: 'Lexend', sans-serif;
+}
+#name-form input{
+    background: #f6f6f6;
+    color: #4e4e4e;
+    
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+
+    padding: 10px;
+    height: 30px;
+    width: 330px;
+    display: block;
+
+    box-shadow: none;
+    border-radius: 10px;
+    border: 1px solid #bebebe;
+}
+#start-button{
+    background: #2afe2e;
+    color: #006100;
+    
+    font-family: "Metropolis", "Gotham", Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+
+    padding: 15px;
+    margin-top: 30px;
+
+    height: 50px;
+    width: 350px;
+    display: block;
+    
+    box-shadow: none;
+    border-radius: 40px;
+    border: 2px solid #006100;
+}
+#start-button:active{
+    background: #1c9c1c;
+    color: #004d00;
+}   
+#custom-label {
+    display: block;
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    letter-spacing: 0.03rem;
+}
+
+/* Pagina Scelta */
+#choise-container {
+    height: 540px;
+    width: 820px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+}
+#name{
+    position: fixed;
+    right: 0;
+
+    margin: 20px;
+    font-family: 'Lexend', sans-serif;
+}
+.choise{
+    min-height: 100px;
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    border: 1.5px solid #9b9b9b;
+    border-radius: 35px;
+    box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 2px rgba(0, 0, 0, 0.19);
+}
+.choise:hover {
+    transform: scale(1.08);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+}
+.choise:active {
+    transform: scale(1);
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#img-choise{
+    height: 140px;
+    width: fit-content;
+    margin-top: 10px;
+}
+#choise-name{
+    font-family: 'Lexend', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+
+    text-align: center;
+    height: 60px;
+}
+#subtitle {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.05px;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+#title {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.05px;
+    margin-bottom: 0;
+}
+#game-container {
+    height: 300px;
+    width: 500px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+}
+#game-container button {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 10px;
+
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    background: #f6f6f6;
+    color: #4e4e4e;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19);
+    border: solid black 1px;
+}
+#game-container button:hover {
+    transform: scale(1.08);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+}
+#game-container button:active {
+    transform: scale(1);
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #e0e0e0;
+}
+#nick:hover{
+    transform: scale(1.08);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+}
+#nick:active {
+    transform: scale(1);
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Giochi */
+#flagGame-container, #nationsGame-container, #classic-game-container {
+    height: 490px;
+    width: 800px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19);
+}
+.boxn,.boxF,.boxN,.boxf {
+    height: 125px;
+    width: 250px;
+    margin: 15px;
+
+    font-family: "Lexend", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: underline;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19);
+}
+.boxn img, .boxN img{
+    width: 100%;
+}
+.boxn:active,.boxf:active{
+    transform: scale(1);
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.boxn:hover,.boxf:hover {
+    transform: scale(1.08);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+}
+#life1, #life2, #life3 {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    margin-right: 50px;
+}
+#lives{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin: 10px;
+    margin-right: 50px;
+
+    font-family: 'Lexend', sans-serif;
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+}
+#vittoria,#sconfitta{
+    height: 350px;
+    width: 950px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+
+    font-family: "Lexend", sans-serif;
+    font-size: 100px;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+    z-index: 5;
+    
+    border-radius: 25px;
+    border: solid black 1px;
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19);
+}
+#hint, #hints-answer{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+
+    margin: 10px auto;
+    padding: 0 10px;
+    width: 80%;
+    height: 70px;
+
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19);
+    border: 1px solid #bebebe;
+    background: #f6f6f6;
+    color: #4e4e4e;
+}
+#hint{
+    background: #2c3e50;
+    color: #ecf0f1;
+    border-radius: 8px;
+    text-align: center;
+    padding: 23px;
+    height: 24px;
+}
+
+/* Tabella */
+#score-table {
+    width: 900px;
+    display: none;
+    margin: 5% auto;
+
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19);
+
+}
+thead {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+th, td {
+    padding: 16px 20px;
+    text-align: center;
+}
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tbody tr:hover {
+    background-color: #d1e7fd;
+    transition: background-color 0.3s ease;
+}
+td:empty {
+    background-color: #ffffff;
+}
+#score,#score2,#score3{
+    font-family: 'Lexend', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    table {
+    width: 100%;
+    font-size: 14px;
+    }
+
+    th, td {
+    padding: 12px;
+    }
+}
+
+
+@font-face {
+    font-family: 'Lexend';
+    src: url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxP.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
