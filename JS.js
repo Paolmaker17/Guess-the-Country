@@ -370,6 +370,10 @@ function setParameters(countries, numberOfCountries) {
             if(selectedFlag.getAttribute("src")===correctFlag) {
                 corrette++;
                 console.log("Corrette: " + corrette);
+                document.querySelectorAll(".boxn").forEach(element => {
+                    element.style.border=""
+                    element.style.boxShadow=" 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19)";
+                });
 
                 saveAnswers(selectedFlag,box);
 
@@ -377,10 +381,11 @@ function setParameters(countries, numberOfCountries) {
 
             } else {
                 sbagliate++;
+                event.target.parentNode.style.border="red solid 5px"
+                event.target.parentNode.style.boxShadow=" 0 4px 8px 4px rgba(255, 0, 0, 0.34), 0 6px 20px 4px rgba(255, 0, 0, 0.19)";
                 console.log("Sbagliate: " + sbagliate);
 
                 saveAnswers(selectedFlag,box);
-                alert("Hai selezionato la bandiera sbagliata!");
 
                 if(sbagliate==3) {
                     document.querySelector("#life1").setAttribute("src", "Img/Cuore Vuoto.png")
@@ -413,17 +418,22 @@ function setParameters(countries, numberOfCountries) {
             if(`Img/Bandiere/${selectedNation.textContent}.png`===correctNation.getAttribute("src")) {
                 corrette++;
                 console.log("Corrette: " + corrette);
+                document.querySelectorAll(".boxf").forEach(element => {
+                    element.style.border=""
+                    element.style.boxShadow=" 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19)";
+                });
 
                 saveAnswers2(selectedNation,box2);
 
                 startGame(numberOfCountries,indexs3,box,indexs,actualNations,boxes);
             } else {
                 sbagliate++;
+                event.target.style.border="red solid 4px"
+                event.target.style.boxShadow=" 0 4px 8px 4px rgba(255, 0, 0, 0.34), 0 6px 20px 4px rgba(255, 0, 0, 0.19)";
                 console.log("Sbagliate: " + sbagliate);
 
                 
                 saveAnswers2(selectedNation,box2);
-                alert("Hai selezionato la nazione sbagliata!");
                 if(sbagliate==3) {
                     document.querySelector("#life1").setAttribute("src", "Img/Cuore Vuoto.png")
                     sbagliate=0;
@@ -479,7 +489,7 @@ function setParameters(countries, numberOfCountries) {
                     }
 
             }else{
-                saveAnswers3(classicCountries,indexs,sbagliate,document.querySelectorAll("#hints-answer")[1].value);
+                saveAnswers3(indexs,indexs,sbagliate,document.querySelectorAll("#hints-answer")[1].value);
             }
         }
     });
