@@ -36,12 +36,14 @@ let boxes2;
 let box2;
 let hints;
 let hintsInput;
-const europeanCountries = ["Italia","Francia","Germania","Spagna", "Portogallo", "Grecia", "Regno Unito", "Paesi Bassi", "Svizzera", "Austria"];
-const asianCountries = ["Cina","Giappone", "Corea del Nord", "Corea del Sud", "Mongolia", "Vietnam", "Kazakistan", "Pakistan", "Russia", "India"];
-const northAmericanCountries = ["Groenlandia","Guatemala","Cuba","Bahamas", "Giamaica", "Messico", "Costa Rica", "Panama", "USA", "Canada"];
-const southAmericanCountries = ["Colombia","Bolivia","Ecuador","Cile", "Perù", "Venezuela", "Uruguay", "Paraguay", "Argentina", "Brasile"];
-const africanCountries = ["Congo","Libia","Marocco","Egitto", "Mozambico", "Ciad", "Etiopia", "Sud Africa", "Nigeria", "Ghana"];
-const oceanianCountries = ["Vanuatu","Niue","Guam","Samoa", "Isole Marshall", "Isole Salomone", "Figi", "Papua Nuova Guinea", "Nuova Zelanda", "Australia"];
+/* Final */ const europeanCountries = ["Albania", "Andorra", "Armenia", "Austria", "Azerbaigian", "Bielorussia", "Belgio", "Bosnia e Herzegovina", "Bulgaria", "Croazia", "Cipro", "Repubblica Ceca", "Danimarca", "Estonia", "Finlandia", "Francia", "Georgia", "Germania", "Grecia", "Ungheria", "Islanda", "Irlanda", "Italia", "Kosovo", "Lettonia", "Liechtenstein", "Lituania", "Lussemburgo", "Malta", "Moldavia", "Monaco", "Montenegro", "Paesi Bassi", "Macedonia del Nord", "Norvegia", "Polonia", "Portogallo", "Romania", "Russia", "San Marino", "Serbia", "Slovacchia", "Slovenia", "Spagna", "Svezia", "Svizzera", "Turchia", "Ucraina", "Regno Unito", "Città del Vaticano"];
+/* Final */ const asianCountries = ["Afghanistan", "Armenia", "Azerbaigian", "Bahrein", "Bangladesh", "Bhutan", "Brunei", "Cambogia", "Cina", "Corea del Nord", "Corea del Sud", "Emirati Arabi Uniti", "Georgia", "Giappone", "Giordania", "India", "Indonesia", "Iran", "Iraq", "Israele", "Kazakistan", "Kuwait", "Kirgizistan", "Laos", "Libano", "Malaysia", "Maldive", "Mongolia", "Myanmar", "Nepal", "Oman", "Pakistan", "Palestina", "Filippine", "Qatar", "Russia", "Arabia Saudita", "Singapore", "Sri Lanka", "Siria", "Taiwan", "Tajikistan", "Thailandia", "Timor Est", "Turchia", "Turkmenistan", "Emirati Arabi Uniti", "Uzbekistan", "Vietnam", "Yemen"];
+/* Final */ const northAmericanCountries = ["Antigua e Barbuda", "Bahamas", "Barbados", "Belize", "Canada", "Costa Rica", "Cuba", "Dominica", "El Salvador", "Grenada", "Guatemala", "Haiti", "Honduras", "Giamaica", "Messico", "Nicaragua", "Panama", "Repubblica Dominicana", "Saint Kitts e Nevis", "Santa Lucia", "Saint Vincent e Grenadine", "USA", "Trinidad e Tobago"];
+/* Final */ const southAmericanCountries = ["Colombia","Bolivia","Ecuador","Cile", "Perù", "Venezuela", "Uruguay", "Paraguay", "Argentina", "Brasile", "Guyana", "Suriname"];
+/* Final */ const africanCountries = ["Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Capo Verde", "Ciad", "Comore", "Congo", "Repubblica Democratica del Congo", "Costa d'Avorio", "Djibouti", "Egitto", "Eritrea", "Eswatini", "Etiopia", "Gabon", "Gambia", "Ghana", "Guinea", "Guinea-Bisau", "Guinea Equatoriale", "Kenya", "Lesotho", "Liberia", "Libia", "Madagascar", "Malawi", "Mali", "Marocco", "Mauritania", "Mauritius", "Mozambico", "Namibia", "Niger", "Nigeria", "Ruanda", "Sao Tomé e Principe", "Senegal", "Seychelles", "Sierra Leone", "Somalia", "Sudafrica", "Sudan", "Sudan del Sud", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe"
+
+];
+/* Final */ const oceanianCountries = ["Australia", "Figi", "Kiribati", "Isole Marshall", "Micronesia", "Nauru", "Nuova Zelanda", "Palau", "Papua Nuova Guinea", "Samoa", "Isole Salomone", "Tonga", "Tuvalu", "Vanuatu"];
 
 const classicCountries = ["Italia", "Francia", "Germania", "Spagna", "Brasile", "Grecia", "Regno Unito", "USA", "Russia", "Cina","Argentina", "Giappone", "India", "Messico", "Canada", "Australia", "Norvegia", "Egitto", "Sud Africa", "Nuova Zelanda"];
 
@@ -503,8 +505,11 @@ function startGame(numberOfCountries,indexs3,box,indexs,actualNations,boxes) {
 
     console.log("Corrette: " + corrette);
     console.log("Sbagliate: " + sbagliate);
+    document.querySelectorAll("#number").forEach(element => {
+        element.textContent=numberOfCountries
+    });
 
-    if(corrette==10) {
+    if(corrette==numberOfCountries) {
         alert("Complimenti, hai vinto! 🤑");
 
         document.getElementById("img").style.display="block";
@@ -617,6 +622,15 @@ function goBack(){
     rightFlags=[];
     answerFlags=[];
     document.querySelector("#score-table").querySelector("tbody").innerHTML="";
+
+    document.querySelectorAll(".boxn").forEach(element => {
+        element.style.border=""
+        element.style.boxShadow=" 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19)";
+    });
+    document.querySelectorAll(".boxf").forEach(element => {
+        element.style.border=""
+        element.style.boxShadow=" 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19)";
+    });
 
     document.querySelectorAll(".boxn").forEach(element => {
         // Clona il nodo per rimuovere tutti gli event listener
