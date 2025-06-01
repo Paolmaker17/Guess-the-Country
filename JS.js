@@ -141,8 +141,8 @@ function addRows() {
     for(let i=0; i<answerFlags.length; i++) {
         table.querySelector("tbody").innerHTML+=`
                                     <tr>
-                                        <td>${answerFlags[i]}</td>
-                                        <td>Hai selezionato ${rightFlags[i]}</td>
+                                        <td>Hai selezionato ${answerFlags[i]}</td>
+                                        <td>${rightFlags[i]}</td>
                                     </tr>`;
     } 
 
