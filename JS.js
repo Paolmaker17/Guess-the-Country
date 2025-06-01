@@ -163,7 +163,6 @@ function seeScore(){
 function setFlags(indexs3,box,indexs,actualNations,boxes,numberOfCountries){
     document.getElementById("score").style.top=(window.innerHeight - document.querySelector(".nations-container").style.height) / 2 -230 + "px";
     document.getElementById("score").style.right=(window.innerWidth - document.querySelector(".nations-container").style.width) / 2 -380 + "px";
-    console.log(document.getElementById("score").style.top);
 
     box.textContent=actualNations[indexs[setTitle]];
     
@@ -262,8 +261,6 @@ function setNations(indexs3,box,indexs,actualNations,boxes,numberOfCountries){
 
     let nonUguale2=0;
     boxes2.forEach(boxs => {
-    console.log(boxs.textContent)
-    console.log(actualNations[indexs[setTitle]])
         if(boxs.textContent==actualNations[indexs[setTitle]]) {
             console.log("Questa Nazione é Uguale");
         } else {
@@ -391,6 +388,7 @@ function setParameters(countries, numberOfCountries) {
                     document.querySelector("#life1").setAttribute("src", "Img/Cuore Intero.png");
                     document.querySelector("#life2").setAttribute("src", "Img/Cuore Intero.png");
                     document.querySelector("#life3").setAttribute("src", "Img/Cuore Intero.png");
+                    return;
                 }else if(sbagliate==1) {
                     document.querySelector("#life3").setAttribute("src", "Img/Cuore Vuoto.png");}
                 else if(sbagliate==2) {
@@ -501,9 +499,6 @@ function setParameters(countries, numberOfCountries) {
 }
 
 function startGame(numberOfCountries,indexs3,box,indexs,actualNations,boxes) {
-
-    console.log("Corrette: " + corrette);
-    console.log("Sbagliate: " + sbagliate);
     document.querySelectorAll("#number").forEach(element => {
         element.textContent=numberOfCountries
     });
@@ -528,6 +523,7 @@ function startGame(numberOfCountries,indexs3,box,indexs,actualNations,boxes) {
         document.querySelector("#life1").setAttribute("src", "Img/Cuore Intero.png");
         document.querySelector("#life2").setAttribute("src", "Img/Cuore Intero.png");
         document.querySelector("#life3").setAttribute("src", "Img/Cuore Intero.png");
+        return;
     }
 
     if(corretteCls==20) {
@@ -545,6 +541,7 @@ function startGame(numberOfCountries,indexs3,box,indexs,actualNations,boxes) {
         hide();
 
         seeScore();
+        return;
     }
 
     switch(i) {
@@ -569,7 +566,7 @@ function startGame(numberOfCountries,indexs3,box,indexs,actualNations,boxes) {
 // Funzioni dopo scelta modalità
 function modalitàContinenti(){
     i=1
-console.log(i);
+    console.log("i="+i);
     document.querySelectorAll(".continents-container").forEach(element => {
         element.style.display="flex";
     });
@@ -578,7 +575,7 @@ console.log(i);
 }
 function modalitàContinenti2(){
     i=2
-console.log(i);
+    console.log("i="+i);
     document.querySelectorAll(".continents-container").forEach(element => {
         element.style.display="flex";
     });
@@ -586,7 +583,7 @@ console.log(i);
     document.querySelector("#back-button").style.display="block";
 }
 function modalitàClassica(){
-console.log(i);
+    console.log("i="+i);
     document.querySelector(".games-container").style.display="none";
     document.querySelectorAll(".classic-container").forEach(element => {
         element.style.display="flex";
