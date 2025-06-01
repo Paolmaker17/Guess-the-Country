@@ -515,6 +515,8 @@ function startGame(numberOfCountries,indexs3,box,indexs,actualNations,boxes) {
         setTimeout(() => {
             document.getElementById("img").style.opacity="0";
         }, 2000);
+        document.getElementById("img").style.display="none";
+
         corrette=0;
         sbagliate=0;
         hide();
@@ -532,7 +534,9 @@ function startGame(numberOfCountries,indexs3,box,indexs,actualNations,boxes) {
         document.getElementById("img").style.display="block";
         setTimeout(() => {
             document.getElementById("img").style.opacity="0";
-        }, 3000);
+        }, 2000);
+        document.getElementById("img").style.display="none";
+        
         corretteCls=0;
         hide();
 
