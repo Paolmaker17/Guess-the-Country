@@ -40,9 +40,7 @@ let hintsInput;
 /* Final */ const asianCountries = ["Afghanistan", "Armenia", "Azerbaigian", "Bahrein", "Bangladesh", "Bhutan", "Brunei", "Cambogia", "Cina", "Corea del Nord", "Corea del Sud", "Emirati Arabi Uniti", "Georgia", "Giappone", "Giordania", "India", "Indonesia", "Iran", "Iraq", "Israele", "Kazakistan", "Kuwait", "Kirgizistan", "Laos", "Libano", "Malaysia", "Maldive", "Mongolia", "Myanmar", "Nepal", "Oman", "Pakistan", "Palestina", "Filippine", "Qatar", "Russia", "Arabia Saudita", "Singapore", "Sri Lanka", "Siria", "Taiwan", "Tajikistan", "Thailandia", "Timor Est", "Turchia", "Turkmenistan", "Uzbekistan", "Vietnam", "Yemen"];
 /* Final */ const northAmericanCountries = ["Antigua e Barbuda", "Bahamas", "Barbados", "Belize", "Canada", "Costa Rica", "Cuba", "Dominica", "El Salvador", "Grenada", "Guatemala", "Haiti", "Honduras", "Giamaica", "Messico", "Nicaragua", "Panama", "Repubblica Dominicana", "Saint Kitts e Nevis", "Santa Lucia", "Saint Vincent e Grenadine", "USA", "Trinidad e Tobago"];
 /* Final */ const southAmericanCountries = ["Colombia","Bolivia","Ecuador","Cile", "Perù", "Venezuela", "Uruguay", "Paraguay", "Argentina", "Brasile", "Guyana", "Suriname"];
-/* Final */ const africanCountries = ["Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Capo Verde", "Ciad", "Comore", "Congo", "Repubblica Democratica del Congo", "Costa d'Avorio", "Djibouti", "Egitto", "Eritrea", "Eswatini", "Etiopia", "Gabon", "Gambia", "Ghana", "Guinea", "Guinea-Bisau", "Guinea Equatoriale", "Kenya", "Lesotho", "Liberia", "Libia", "Madagascar", "Malawi", "Mali", "Marocco", "Mauritania", "Mauritius", "Mozambico", "Namibia", "Niger", "Nigeria", "Ruanda", "Sao Tomé e Principe", "Senegal", "Seychelles", "Sierra Leone", "Somalia", "Sudafrica", "Sudan", "Sudan del Sud", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe"
-
-];
+/* Final */ const africanCountries = ["Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Capo Verde", "Ciad", "Comore", "Congo", "Repubblica Democratica del Congo", "Costa d'Avorio", "Djibouti", "Egitto", "Eritrea", "Eswatini", "Etiopia", "Gabon", "Gambia", "Ghana", "Guinea", "Guinea-Bissau", "Guinea Equatoriale", "Kenya", "Lesotho", "Liberia", "Libia", "Madagascar", "Malawi", "Mali", "Marocco", "Mauritania", "Mauritius", "Mozambico", "Namibia", "Niger", "Nigeria", "Ruanda", "São Tomé e Príncipe", "Senegal", "Seychelles", "Sierra Leone", "Somalia", "Sudafrica", "Sudan", "Sudan del Sud", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe", "Camerun", "Repubblica Centrafricana", "Tanzania"];
 /* Final */ const oceanianCountries = ["Australia", "Figi", "Kiribati", "Isole Marshall", "Micronesia", "Nauru", "Nuova Zelanda", "Palau", "Papua Nuova Guinea", "Samoa", "Isole Salomone", "Tonga", "Tuvalu", "Vanuatu"];
 
 const classicCountries = ["Italia", "Francia", "Germania", "Spagna", "Brasile", "Grecia", "Regno Unito", "USA", "Russia", "Cina","Argentina", "Giappone", "India", "Messico", "Canada", "Australia", "Norvegia", "Egitto", "Sud Africa", "Nuova Zelanda"];
@@ -243,7 +241,6 @@ function setNations(indexs3,box,indexs,actualNations,boxes,numberOfCountries){
     // Indice per la Bandiera Giusta
     indexs2=get4randomNumbers();
 
-   
     // 1. Costruiamo un Set di 4 indici unici diversi da quello corretto
     const distractors = new Set();
     while (distractors.size < 4) {
