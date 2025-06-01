@@ -16,8 +16,7 @@ function errorControl() {
 
     localStorage.setItem("username", document.getElementById("name-form").children[1].value);
     document.getElementById("username").value="";
-    window.location.href="game.html"; 
-    document.getElementById("name").textContent=localStorage.getItem("username");
+    window.location.href="game.html";
 }
 
 function changeNickname(){
@@ -25,17 +24,11 @@ function changeNickname(){
 }
 
 // Array nazioni
-let i=0;
+let i=0, box2, boxes2;
 let rightFlags=[];
 let answerFlags=[];
-let corrette=0;
-let corretteCls=0;
-let sbagliate=0;
-let setTitle=0;
-let boxes2;
-let box2;
-let hints;
-let hintsInput;
+let corrette=0, corretteCls=0, sbagliate=0;
+let setTitle=0, hints, hintsInput;
 /* Final */ const europeanCountries = ["Albania", "Andorra", "Armenia", "Austria", "Azerbaigian", "Bielorussia", "Belgio", "Bosnia e Herzegovina", "Bulgaria", "Croazia", "Cipro", "Repubblica Ceca", "Danimarca", "Estonia", "Finlandia", "Francia", "Georgia", "Germania", "Grecia", "Ungheria", "Islanda", "Irlanda", "Italia", "Kosovo", "Lettonia", "Liechtenstein", "Lituania", "Lussemburgo", "Malta", "Moldavia", "Monaco", "Montenegro", "Paesi Bassi", "Macedonia del Nord", "Norvegia", "Polonia", "Portogallo", "Romania", "Russia", "San Marino", "Serbia", "Slovacchia", "Slovenia", "Spagna", "Svezia", "Svizzera", "Turchia", "Ucraina", "Regno Unito", "Città del Vaticano"];
 /* Final */ const asianCountries = ["Afghanistan", "Armenia", "Azerbaigian", "Bahrein", "Bangladesh", "Bhutan", "Brunei", "Cambogia", "Cina", "Corea del Nord", "Corea del Sud", "Emirati Arabi Uniti", "Georgia", "Giappone", "Giordania", "India", "Indonesia", "Iran", "Iraq", "Israele", "Kazakistan", "Kuwait", "Kirgizistan", "Laos", "Libano", "Malaysia", "Maldive", "Mongolia", "Myanmar", "Nepal", "Oman", "Pakistan", "Palestina", "Filippine", "Qatar", "Russia", "Arabia Saudita", "Singapore", "Sri Lanka", "Siria", "Taiwan", "Tajikistan", "Thailandia", "Timor Est", "Turchia", "Turkmenistan", "Uzbekistan", "Vietnam", "Yemen"];
 /* Final */ const northAmericanCountries = ["Antigua e Barbuda", "Bahamas", "Barbados", "Belize", "Canada", "Costa Rica", "Cuba", "Dominica", "El Salvador", "Grenada", "Guatemala", "Haiti", "Honduras", "Giamaica", "Messico", "Nicaragua", "Panama", "Repubblica Dominicana", "Saint Kitts e Nevis", "Santa Lucia", "Saint Vincent e Grenadine", "USA", "Trinidad e Tobago"];
@@ -116,6 +109,8 @@ function hide(){
     document.querySelectorAll(".flag-container").forEach(element => {
         element.style.display="none";
     });
+    document.getElementById("lives-container").style.display="none";
+    document.getElementById("see-score-button").style.display="none";
 }
 
 function saveAnswers(selectedFlag,box) {
@@ -160,8 +155,6 @@ function seeScore(){
     rightFlags=[];
 
     document.getElementById("score-table").style.display="table";
-    document.getElementById("lives-container").style.display="none";
-    document.getElementById("see-score-button").style.display="none";
     document.getElementById("nick").style.top=0;
     document.getElementById("name").style.top=0;
 }
@@ -487,8 +480,17 @@ function setParameters(countries, numberOfCountries) {
                         startGame(numberOfCountries,indexs3,box,indexs,actualNations,boxes);
                     }
 
+            }else if(classicCountries[indexs[sbagliate]].toUpperCase()=="SUD AFRICA"){
+                if(document.querySelectorAll("#hints-answer")[1].value.toUpperCase()=="SUDAFRICA"){
+                        corretteCls++
+                        saveAnswers3(classicCountries,indexs,sbagliate,document.querySelectorAll("#hints-answer")[1].value);
+                        document.querySelectorAll("#hints-answer")[1].value="";
+
+                        startGame(numberOfCountries,indexs3,box,indexs,actualNations,boxes);
+                    }
+
             }else{
-                saveAnswers3(indexs,indexs,sbagliate,document.querySelectorAll("#hints-answer")[1].value);
+                saveAnswers3(classicCountries,indexs,sbagliate,document.querySelectorAll("#hints-answer")[1].value);
             }
         }
     });
@@ -511,8 +513,8 @@ function startGame(numberOfCountries,indexs3,box,indexs,actualNations,boxes) {
 
         document.getElementById("img").style.display="block";
         setTimeout(() => {
-            document.getElementById("img").style.display="none";
-        }, 3000);
+            document.getElementById("img").style.opacity="0";
+        }, 2000);
         corrette=0;
         sbagliate=0;
         hide();
@@ -529,7 +531,7 @@ function startGame(numberOfCountries,indexs3,box,indexs,actualNations,boxes) {
 
         document.getElementById("img").style.display="block";
         setTimeout(() => {
-            document.getElementById("img").style.display="none";
+            document.getElementById("img").style.opacity="0";
         }, 3000);
         corretteCls=0;
         hide();
@@ -548,8 +550,6 @@ function startGame(numberOfCountries,indexs3,box,indexs,actualNations,boxes) {
             setClassic(indexs);
             break;
     }
-
-    
 
     console.log(setTitle);
     document.querySelector("#score-now").textContent=setTitle;
@@ -613,11 +613,9 @@ function giocoNazioni(){
 
 // FUnzione per tornare indietro
 function goBack(){
-    corrette=0;
-    sbagliate=0;
+    corrette=0, sbagliate=0;
     setTitle=0;
-    rightFlags=[];
-    answerFlags=[];
+    rightFlags=[], answerFlags=[];
     document.querySelector("#score-table").querySelector("tbody").innerHTML="";
 
     document.querySelectorAll(".boxn").forEach(element => {
@@ -639,15 +637,16 @@ function goBack(){
         const newElement = element.cloneNode(true);
         element.parentNode.replaceChild(newElement, element);
     });
+
     hide();
+
     document.querySelectorAll(".continents-container").forEach(element => {
         element.style.display="none";
     });
+
     document.querySelector(".games-container").style.display="flex";
     document.querySelector("#back-button").style.display="none";
-    document.querySelector("#lives-container").style.display="none";
     document.querySelector("#score-table").style.display="none";
-    document.querySelector("#see-score-button").style.display="none";
     document.querySelector("#life1").setAttribute("src", "Img/Cuore Intero.png");
     document.querySelector("#life2").setAttribute("src", "Img/Cuore Intero.png");
     document.querySelector("#life3").setAttribute("src", "Img/Cuore Intero.png");

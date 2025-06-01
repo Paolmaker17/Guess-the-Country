@@ -219,6 +219,9 @@ body {
 .boxn img, .boxN img{
     width: 100%;
 }
+#img {
+    transition: .9s all ease-out;
+}
 .boxn:active,.boxf:active{
     transform: scale(1);
     transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
